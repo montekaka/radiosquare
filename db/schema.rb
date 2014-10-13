@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013032457) do
+ActiveRecord::Schema.define(version: 20141013033156) do
+
+  create_table "episodes", force: true do |t|
+    t.string   "name"
+    t.integer  "podcast_id"
+    t.integer  "file_size"
+    t.integer  "lastmod"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "episodes", ["podcast_id"], name: "index_episodes_on_podcast_id"
 
   create_table "podcasts", force: true do |t|
     t.string   "name"

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @episode.name %>
+</p>
+
+<p>
+  <strong>Podcast:</strong>
+  <%= @episode.podcast_id %>
+</p>
+
+<p>
+  <strong>File size:</strong>
+  <%= @episode.file_size %>
+</p>
+
+<p>
+  <strong>Lastmod:</strong>
+  <%= @episode.lastmod %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @episode.url %>
+</p>
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>

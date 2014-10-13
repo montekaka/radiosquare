@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  podcast_id: 1
+  file_size: 1
+  lastmod: 1
+  url: MyString
+
+two:
+  name: MyString
+  podcast_id: 1
+  file_size: 1
+  lastmod: 1
+  url: MyString
