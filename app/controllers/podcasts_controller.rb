@@ -11,6 +11,10 @@ class PodcastsController < ApplicationController
   # GET /podcasts/1.json
   def show
     @episodes = @podcast.episodes.order('lastmod DESC')
+    respond_to do |format|
+      format.html # index.html.erb
+      format.rss  { render :layout => false }
+    end
   end
 
   # GET /podcasts/new
