@@ -21,7 +21,12 @@ task :create_episodes => :environment do
 		show_cgi = CGI.escape(podcast_name)
 		resp = RestClient.get("#{station_url}#{player}#{show_cgi}"+"&subdirs=false", 'User-Agent' => 'Ruby')
 		arr = Crack::JSON.parse(resp)
+		arr = arr.sort!{|a,b| a["lastmod"].to_s <=> b["lastmod"].to_s}
+		arr = arr.reverse!
 		has_episode = Episode.find_by_podcast_id(podcast.id)
+		# arr.each do |f|
+		# 	puts f['filename'] + ' ' + f['lastmod'].to_s
+		# end
 		if has_episode == nil
 			arr.each do |episode|
 				episode_name = episode['filename']
