@@ -28,6 +28,12 @@ gem 'spring',        group: :development
 gem 'rest-client', '~> 1.7.2'
 gem 'crack', '~> 0.4.2'
 
+
+gem 'devise', '~> 3.4'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'active_model_serializers', '0.9.3'
+gem 'devise-ios-rails'
+
 group :development, :test do
 	gem 'sqlite3'
 end
