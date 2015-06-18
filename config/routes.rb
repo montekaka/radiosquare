@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_ios_rails_for :users
+
+  devise_scope :user do
+    post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'
+  end  
   resources :episodes
 
   resources :podcasts
